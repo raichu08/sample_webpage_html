@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Animated Web Page</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    body {
+      background: #f4f4f4;
+      color: #333;
+      overflow-x: hidden;
+    }
+
+    header {
+      background: #2d3e50;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      animation: fadeInDown 1s ease-out;
+      z-index: 1000;
+    }
+
+    nav a {
+      color: #fff;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #f39c12;
+    }
+
+    section {
+      padding: 60px 20px;
+      text-align: center;
+      opacity: 0;
+      transform: translateY(40px);
+      animation: slideUp 1s ease-out forwards;
+    }
+
+    section:nth-of-type(2) { animation-delay: 0.3s; }
+    section:nth-of-type(3) { animation-delay: 0.6s; }
+    section:nth-of-type(4) { animation-delay: 0.9s; }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      margin-top: 30px;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      transform: scale(0.9);
+      opacity: 0;
+      animation: zoomIn 0.8s ease-out forwards;
+    }
+
+    .card:nth-child(1) { animation-delay: 0.3s; }
+    .card:nth-child(2) { animation-delay: 0.6s; }
+    .card:nth-child(3) { animation-delay: 0.9s; }
+
+    button {
+      padding: 10px 20px;
+      background: #3498db;
+      border: none;
+      color: #fff;
+      border-radius: 8px;
+      cursor: pointer;
+      margin-top: 15px;
+      animation: bounce 2s infinite;
+    }
+
+    button:hover {
+      background: #2980b9;
+      animation: none;
+    }
+
+    footer {
+      background: #2d3e50;
+      color: #ccc;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+      animation: fadeInUp 1s ease-out;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    /* Animations */
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes slideUp {
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes zoomIn {
+      to { transform: scale(1); opacity: 1; }
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-6px); }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Animated Web Page</h1>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#features">Features</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section id="about">
+    <h2>About Us</h2>
+    <p>We create modern, responsive, and animated websites using HTML, CSS, and JavaScript.</p>
+  </section>
+
+  <section id="features">
+    <h2>Our Features</h2>
+    <div class="cards">
+      <div class="card">
+        <h3>Fast</h3>
+        <p>Optimized for speed and performance on all devices.</p>
+        <button onclick="alert('Speed is our priority!')">Learn More</button>
+      </div>
+      <div class="card">
+        <h3>Responsive</h3>
+        <p>Perfectly adapts to desktops, tablets, and smartphones.</p>
+        <button onclick="alert('Mobile-first design!')">Explore</button>
+      </div>
+      <div class="card">
+        <h3>Interactive</h3>
+        <p>Rich user interactions with JavaScript and CSS animations.</p>
+        <button onclick="alert('Engagement guaranteed!')">Discover</button>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <p>Email us at <a href="mailto:info@example.com">info@example.com</a></p>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Animated Web Page. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
